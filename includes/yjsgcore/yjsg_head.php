@@ -162,6 +162,7 @@ $yjsg_js.="
 			lgtr.yjsgplg_error_aborted='".JText::_('YJSG_YJSGPLG_ERROR_ABORTED')."';	
 			lgtr.yjsgplg_error_uncaught='".JText::_('YJSG_YJSGPLG_ERROR_UNCAUGHT')."';	
 			lgtr.yjsgshortcodes_title='".JText::_('YJSG_SHORTCODES_TITLE')."';	
+			lgtr.yjsgslider_stopallvideos='".JText::_('YJSG_YJSGSLIDER_STOPALLVIDEOS')."';	
 			var logo_w = '$logo_per_width';
 			var site_w = '$css_width';
 			var site_f = '$css_font';
