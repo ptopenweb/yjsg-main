@@ -145,6 +145,14 @@ if($default_menu_style == 2 ||  $default_menu_style == 4){
 }
 // site js vars needed for yjsg.responsive.js and yjsg.site.js
 $yjsg_js.="
+			var lgtr = new Object();
+			lgtr.magnificpopup_close='".JText::_('YJSG_MAGNIFICPOPUP_CLOSE')."';
+			lgtr.magnificpopup_loading='".JText::_('YJSG_MAGNIFICPOPUP_LOADING')."';
+			lgtr.magnificpopup_prev='".JText::_('YJSG_MAGNIFICPOPUP_PREVIOUS')."';
+			lgtr.magnificpopup_next='".JText::_('YJSG_MAGNIFICPOPUP_NEXT')."';
+			lgtr.magnificpopup_counter='".JText::_('YJSG_MAGNIFICPOPUP_PAGINATION')."';
+			lgtr.magnificpopup_errorimage='".JText::_('YJSG_MAGNIFICPOPUP_IMAGE_NOT_LOADED')."';
+			lgtr.magnificpopup_errorajax='".JText::_('YJSG_MAGNIFICPOPUP_CONTENT_NOT_LOADED')."';	
 			var logo_w = '$logo_per_width';
 			var site_w = '$css_width';
 			var site_f = '$css_font';

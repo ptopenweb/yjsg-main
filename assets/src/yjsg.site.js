@@ -184,7 +184,18 @@
             var self = this;
 			
 			if (typeof ($.fn.magnificPopup) == 'undefined') return;
-
+			$.extend(true, $.magnificPopup.defaults, {
+			  tClose: lgtr.magnificpopup_close,
+			  tLoading: lgtr.magnificpopup_loading,
+			  gallery: {
+				tPrev: lgtr.magnificpopup_prev,
+				tNext: lgtr.magnificpopup_next,
+				tCounter: lgtr.magnificpopup_counter
+			  },
+			  image: { tError: lgtr.magnificpopup_errorimage },
+			  ajax: { tError: lgtr.magnificpopup_errorajax }
+			});
+			
             $('.yjsg-lightbox-gallery').each(function () {
                 $(this).find('a').magnificPopup({
                     type: 'image',
