@@ -61,13 +61,13 @@
 			
 			
 			if (effect == 'fade' && ( fadeto =='' || fadespeed=='') ) {
-				alert('Fade speed and fade to is required');
+				alert('{{YJSG_SHORTCODES_IMAGES_JS_ALERTFADE}}');
 				return;
 				
 			}
 			
 			if (imagelink == '' || (lightbox !='' && lightboximage == '' )) {
-				alert('Image is required');
+				alert('{{YJSG_SHORTCODES_IMAGES_JS_ALERTIMAGE}}');
 				return;
 				
 			}

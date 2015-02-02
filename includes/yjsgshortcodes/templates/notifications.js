@@ -46,7 +46,7 @@
 			 notifications +='[/yjsgnote]';
 			
 			if (content == '') {
-				alert('Content is required');
+				alert('{{YJSG_SHORTCODES_NOTIFICATIONS_JS_ALERT}}');
 				return;
 				
 			}

@@ -29,7 +29,7 @@
 
 			if(icon ==''){
 				
-				alert('Click on any icon');
+				alert('{{YJSG_SHORTCODES_ICONS_JS_ALERT}}');
 				return;
 				
 			}

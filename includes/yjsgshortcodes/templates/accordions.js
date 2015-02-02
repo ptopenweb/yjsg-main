@@ -44,7 +44,7 @@
 						
 					}
 					
-					accordions +='[yjsgacgroup title="My title" active="'+activeacc+'"]Accordion content goes here...[/yjsgacgroup]';
+					accordions +='[yjsgacgroup title="{{YJSG_SHORTCODES_ACCORDIONS_JS_TITLE}}" active="'+activeacc+'"]{{YJSG_SHORTCODES_ACCORDIONS_JS_DESC}}[/yjsgacgroup]';
 					accordions +="<br/>\n";
 				}
 

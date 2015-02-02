@@ -46,7 +46,7 @@
 						
 					}
 					
-					addtabs +='[yjsgstabsgroup title="Tab title" active="'+activetablink+'"]Tab content goes here...[/yjsgstabsgroup]';
+					addtabs +='[yjsgstabsgroup title="{{YJSG_SHORTCODES_TABS_JS_TITLE}}" active="'+activetablink+'"]{{YJSG_SHORTCODES_TABS_JS_DESC}}[/yjsgstabsgroup]';
 					addtabs +="<br/>\n";
 				}
 
