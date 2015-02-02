@@ -123,19 +123,19 @@
                     error: function (request, textStatus, errorThrown) {
 
                         if (request.status === 0) {
-                            $('.update_msg').html('<span class="error">Not connected.\n Verify Network.</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_notconnected+'</span>');
                         } else if (request.status == 404) {
-                            $('.update_msg').html('<span class="error">Requested page not found. [404]</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_notfound+'</span>');
                         } else if (request.status == 500) {
-                            $('.update_msg').html('<span class="error">Internal Server Error [500].</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_server+'</span>');
                         } else if (textStatus === 'parsererror') {
-                            $('.update_msg').html('<span class="error">Requested JSON parse failed.</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_parsefailed+'</span>');
                         } else if (textStatus === 'timeout') {
-                            $('.update_msg').html('<span class="error">Time out error.</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_timeout+'</span>');
                         } else if (textStatus === 'abort') {
-                            $('.update_msg').html('<span class="error">Ajax request aborted.</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_aborted+'</span>');
                         } else {
-                            $('.update_msg').html('<span class="error">Uncaught Error.\n' + request.responseText + '</span>');
+                            $('.update_msg').html('<span class="error">'+lgtr.yjsgplg_error_uncaught+'\n' + request.responseText + '</span>');
                         }
 
                         self.adminForm.unbind();
