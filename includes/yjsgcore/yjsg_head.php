@@ -153,6 +153,7 @@ $yjsg_js.="
 			lgtr.magnificpopup_counter='".JText::_('YJSG_MAGNIFICPOPUP_PAGINATION')."';
 			lgtr.magnificpopup_errorimage='".JText::_('YJSG_MAGNIFICPOPUP_IMAGE_NOT_LOADED')."';
 			lgtr.magnificpopup_errorajax='".JText::_('YJSG_MAGNIFICPOPUP_CONTENT_NOT_LOADED')."';	
+			lgtr.yjsgcompiler_error='".JText::_('YJSG_YJSGCOMPILER_COMPILER_ERROR')."';	
 			var logo_w = '$logo_per_width';
 			var site_w = '$css_width';
 			var site_f = '$css_font';
