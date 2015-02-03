@@ -1073,7 +1073,7 @@
                     var sysmsg = '<div class="yjtbox yjtb_red lineup">';
                     sysmsg += '<span class="yjtb_close"></span>';
                     sysmsg += '<span class="yjtboxicon fa fa-warning"></span>';
-                    sysmsg += '<h4 class="yjtboxtitle">'.lgtr.yjsgcompiler_error.'</h4>';
+                    sysmsg += '<h4 class="yjtboxtitle">'+lgtr.yjsgcompiler_error+'</h4>';
                     sysmsg += msg;
                     sysmsg += '</div>';
 
