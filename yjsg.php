@@ -1039,12 +1039,23 @@ class plgSystemYjsg extends JPlugin {
 			if($this->app->isSite()){
 				
 				$imagemedia = 'index.php?option=com_media&view=images&tmpl=component&asset=com_templates&author=yjsg&fieldid=';
+				$yjsg_js="";
 				
 			}else{
 				
 				$imagemedia = 'administrator/index.php?option=com_media&view=images&tmpl=component&asset=com_templates&author=yjsg&fieldid=';
+				$yjsg_js="
+							var lgtr = new Object();
+							lgtr.yjsgshortcodes_title='".JText::_('YJSG_SHORTCODES_TITLE')."';	
+							lgtr.yjsgshortcodes_media='".JText::_('YJSG_SHORTCODES_MEDIA_NAME')."';	
+							lgtr.yjsgshortcodes_notifications='".JText::_('YJSG_SHORTCODES_NOTIFICATIONS_NAME')."';	
+							lgtr.yjsgshortcodes_icons='".JText::_('YJSG_SHORTCODES_ICONS_NAME')."';	
+							lgtr.yjsgshortcodes_acoordion='".JText::_('YJSG_SHORTCODES_ACCORDIONS_NAME')."';	
+							lgtr.yjsgshortcodes_tabs='".JText::_('YJSG_SHORTCODES_TABS_NAME')."';	
+							lgtr.yjsgshortcodes_images='".JText::_('YJSG_SHORTCODES_IMAGES_NAME')."';	
+							lgtr.yjsgslider_stopallvideos='".JText::_('YJSG_YJSGSLIDER_STOPALLVIDEOS')."';";
+							
 			}
-			
 			
 			$document = JFactory::getDocument();
 			$document->addScriptDeclaration("
@@ -1052,14 +1063,13 @@ class plgSystemYjsg extends JPlugin {
 			var sitetemplate ='".Yjsg::getDefaultTemplate()."';
 			var imagemedia='$imagemedia';
 			");
-			
+			if (!empty($yjsg_js)) $document->addScriptDeclaration( $yjsg_js );
 			if(intval(JVERSION) < 3){
 				$tipClass	= 'hasTip';
 				$document->addScript(JURI::root( true ).'/plugins/system/yjsg/assets/src/libraries/jquery.min.js');
 				$document->addScript(JURI::root( true ).'/plugins/system/yjsg/assets/src/libraries/jquery-noconflict.js');
 			}
 			
-
 			$document->addScript(JURI::root( true ).'/plugins/system/yjsg/elements/src/yjsgshortcodes.js');	
 			
 			// Yjsg custom shortcodes from template
