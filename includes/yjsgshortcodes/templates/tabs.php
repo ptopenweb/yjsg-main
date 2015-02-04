@@ -8,74 +8,7 @@ require 'framework.php';
 <link rel="stylesheet" href="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/bootstrap3/css/bootstrap.min.css" />
 <script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/src/libraries/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/bootstrap3/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-(function ($) {
-    $(document).ready(function () {
-
-		$('[data-toggle=tooltip]').tooltip({
-		  	container: 'body',
-			trigger:'click'// bug on hover
-		 });
-		 
-		 $('select,input').on('mouseenter', function (event) {
-			 
-			 var label = $('label[for="'+$(this).attr('id')+'"]');
-			 
-			 label.trigger('click');
-			 
-		 }).on('mouseleave', function (event) {
-			  var label = $('label[for="'+$(this).attr('id')+'"]');
-			label.trigger('click');
-		 });
-
-        $('#addshortcode').click(function (event) {
-            event.preventDefault();
-			var tabtype 	= $('select[name=tabtype]').val();
-            var tabid 		= $('input[name=tabid]').val();
-			var tabs 		= $('input[name=tabs]').val();
-			var activetab 	= $('input[name=activetab]').val();
-			
-			
-			if(tabid ==''){
-				tabid ='myid';
-			}
-			
-		  
-		 var addtabs ="<br/>\n";
-		 	 addtabs +='[yjsgstabs ';
-			 addtabs +='id="' + tabid + '" ';
-			 addtabs +='type="' + tabtype + '"]';
-			 addtabs +="<br/>\n";
-
-				for ( var i = 0; i < tabs ; i++ ) {
-					
-					var activetablink= 0;
-					
-					if(i == activetab){
-						
-						activetablink= 1;
-						
-					}
-					
-					addtabs +='[yjsgstabsgroup title="<?php echo JText::_('YJSG_SHORTCODES_TABS_JS_TITLE'); ?>" active="'+activetablink+'"]<?php echo JText::_('YJSG_SHORTCODES_TABS_JS_DESC'); ?>[/yjsgstabsgroup]';
-					addtabs +="<br/>\n";
-				}
-
-
-			 addtabs +='[/yjsgstabs]';
-			 addtabs +="<br/>\n";
-
-			var findEditor = $("#editor-xtd-buttons", parent.document.body).parent().find('textarea').attr('id');
-			
-			if( findEditor !='undefined' ){
-				window.parent.jInsertEditorText(addtabs, findEditor);
-			}
-			
-        });
-
-    });
-}(jQuery));
-</script>
+<script type="text/javascript" src="tabs.js"></script>
 </head>
 <body>
     <div class="container">
