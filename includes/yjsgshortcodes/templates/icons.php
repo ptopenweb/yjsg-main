@@ -10,7 +10,62 @@ require 'framework.php';
 <script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/src/libraries/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/bootstrap3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>elements/src/yjsgfa.js"></script>
-<script type="text/javascript" src="icons.js"></script>
+<script type="text/javascript">
+(function ($) {
+    $(document).ready(function () {
+		
+		$('[data-toggle=tooltip]').tooltip({
+		  	container: 'body',
+			trigger:'click'// bug on hover
+		 });
+		 
+		 $('select,input').on('mouseenter', function (event) {
+			 
+			 var label = $('label[for="'+$(this).attr('id')+'"]');
+			 
+			 label.trigger('click');
+			 
+		 }).on('mouseleave', function (event) {
+			  var label = $('label[for="'+$(this).attr('id')+'"]');
+			label.trigger('click');
+		 });
+		
+        $('#addshortcode').click(function (event) {
+            event.preventDefault();
+			var iconsize = $('select[name=iconsize]').val();
+            var icon = $('input[name=icon]').val();
+			var iconspin = $('select[name=iconspin]').val();
+			var iconborder = $('select[name=iconborder]').val();
+			var iconrotate = $('select[name=iconrotate]').val();
+			
+
+
+			if(icon ==''){
+				
+				alert('<?php echo JText::_('YJSG_SHORTCODES_ICONS_JS_ALERT'); ?>');
+				return;
+				
+			}
+
+			var iconclass = icon + iconsize + iconspin + iconborder + iconrotate;
+			
+		 	var addicon ='[yjsgfa ';
+			 addicon +='name="' + iconclass + '"]';
+			
+			
+			
+			var findEditor = $("#editor-xtd-buttons", parent.document.body).parent().find('textarea').attr('id');
+			
+			if( findEditor !='undefined' ){
+				window.parent.jInsertEditorText(addicon, findEditor);
+			}
+
+			
+        });
+
+    });
+}(jQuery));
+</script>
 </head>
 <body>
 	<div class="container">
